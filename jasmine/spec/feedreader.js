@@ -35,7 +35,7 @@ $(function() {
 			allFeeds.forEach(feed => {
 				expect(feed.url).toBeDefined();
 				expect(feed.url).not.toBeFalsy();
-			})
+			});
 		});
 
 		/*  Write a test that loops through each feed
@@ -46,8 +46,8 @@ $(function() {
 			allFeeds.forEach(feed => {
 				expect(feed.name).toBeDefined();
 				expect(feed.name).not.toBeFalsy();
-			})
-		})
+			});
+		});
 	});
 
 
@@ -77,7 +77,7 @@ $(function() {
 			$menuIconLink.trigger('click');
 			expect($body.hasClass('menu-hidden')).toBeTruthy();
 
-		})
+		});
 
 	});
 
@@ -90,12 +90,12 @@ $(function() {
 		 * the use of Jasmine's beforeEach and asynchronous done() function.
 		 */
 		beforeAll(done => {
-			loadFeed(0, done)
+			loadFeed(0, done);
 		});
 
 		it('has at least a single .entry element', () => {
 			expect($('.feed').find('.entry').length).toBeGreaterThan(0);
-		})
+		});
 	});
 
 
@@ -129,7 +129,5 @@ $(function() {
 			expect(feedHeader1 !== feedHeader2).toBeTruthy();
 		});
 
-	})
-
-
+	});
 }());
