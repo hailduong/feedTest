@@ -109,19 +109,18 @@ $(function() {
 
 		let feedHeader1 = "";
 		let feedHeader2 = "";
-		beforeAll((done) => {
+		beforeEach((done) => {
+
+			// Load the first feed, then load the second feed.
 			loadFeed(0, () => {
+
 				feedHeader1 = $('.header-title').text();
-				
-				if (!!feedHeader2) {
-					done(); // Just to make sure we call done when both of the feeds are loaded
-				}
-			});
-			loadFeed(1, () => {
-				feedHeader2 = $('.header-title').text();
-				if (!!feedHeader1) {
+
+				loadFeed(1, () => {
+					feedHeader2 = $('.header-title').text();
 					done();
-				}
+				});
+				
 			});
 		});
 
